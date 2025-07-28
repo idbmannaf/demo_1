@@ -1,0 +1,38 @@
+[
+  {
+    "id": "1",
+    "title": "The Future of Digital Transformation in 2025",
+    "excerpt": "Exploring the latest trends and technologies that will shape digital transformation initiatives in the coming year.",
+    "content": "Digital transformation continues to evolve at an unprecedented pace...",
+    "author": "Sarah Johnson",
+    "publishDate": "2024-12-15",
+    "category": "Technology",
+    "tags": ["Digital Transformation", "Innovation", "Technology Trends"],
+    "image": "https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=800",
+    "readTime": 5
+  },
+  {
+    "id": "2",
+    "title": "Sustainable Business Practices: A Comprehensive Guide",
+    "excerpt": "Learn how modern businesses are implementing sustainable practices to create positive environmental and social impact.",
+    "content": "Sustainability has become a cornerstone of modern business strategy...",
+    "author": "Michael Chen",
+    "publishDate": "2024-12-10",
+    "category": "Sustainability",
+    "tags": ["Sustainability", "Business", "Environment"],
+    "image": "https://images.pexels.com/photos/414837/pexels-photo-414837.jpeg?auto=compress&cs=tinysrgb&w=800",
+    "readTime": 7
+  },
+  {
+    "id": "3",
+    "title": "Innovation in Remote Work Culture",
+    "excerpt": "Discover innovative strategies for building and maintaining a thriving remote work culture in your organization.",
+    "content": "Remote work has fundamentally changed how we approach collaboration...",
+    "author": "Emily Rodriguez",
+    "publishDate": "2024-12-05",
+    "category": "Workplace",
+    "tags": ["Remote Work", "Innovation", "Culture"],
+    "image": "https://images.pexels.com/photos/4226122/pexels-photo-4226122.jpeg?auto=compress&cs=tinysrgb&w=800",
+    "readTime": 6
+  }
+]

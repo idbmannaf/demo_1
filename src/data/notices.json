@@ -1,0 +1,26 @@
+[
+  {
+    "id": "1",
+    "title": "Important: Office Holiday Schedule",
+    "content": "Please note our updated office hours during the holiday season. Regular operations will resume on January 2nd, 2025.",
+    "publishDate": "2024-12-18",
+    "priority": "high",
+    "category": "General"
+  },
+  {
+    "id": "2",
+    "title": "New Member Portal Launch",
+    "content": "We're excited to announce the launch of our new member portal with enhanced features and improved user experience.",
+    "publishDate": "2024-12-12",
+    "priority": "medium",
+    "category": "Announcement"
+  },
+  {
+    "id": "3",
+    "title": "Monthly Newsletter December 2024",
+    "content": "Our December newsletter is now available featuring year-end highlights and upcoming initiatives for 2025.",
+    "publishDate": "2024-12-01",
+    "priority": "low",
+    "category": "Newsletter"
+  }
+]

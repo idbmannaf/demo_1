@@ -1,0 +1,37 @@
+[
+  {
+    "id": "1",
+    "name": "Dr. Sarah Mitchell",
+    "position": "Chief Executive Officer",
+    "bio": "With over 15 years of experience in technology leadership, Dr. Mitchell brings visionary thinking and strategic expertise to drive our organization's mission forward.",
+    "image": "https://images.pexels.com/photos/3760067/pexels-photo-3760067.jpeg?auto=compress&cs=tinysrgb&w=400",
+    "social": {
+      "linkedin": "https://linkedin.com/in/sarahmitchell",
+      "twitter": "https://twitter.com/sarahmitchell",
+      "email": "sarah.mitchell@company.com"
+    }
+  },
+  {
+    "id": "2",
+    "name": "James Thompson",
+    "position": "Chief Technology Officer",
+    "bio": "James leads our technology initiatives with a focus on innovation and scalable solutions. His expertise spans cloud architecture, AI, and digital transformation.",
+    "image": "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=400",
+    "social": {
+      "linkedin": "https://linkedin.com/in/jamesthompson",
+      "email": "james.thompson@company.com"
+    }
+  },
+  {
+    "id": "3",
+    "name": "Maria Rodriguez",
+    "position": "Head of Operations",
+    "bio": "Maria oversees our operational excellence and ensures the seamless delivery of our services. She brings extensive experience in process optimization and team leadership.",
+    "image": "https://images.pexels.com/photos/3760263/pexels-photo-3760263.jpeg?auto=compress&cs=tinysrgb&w=400",
+    "social": {
+      "linkedin": "https://linkedin.com/in/mariarodriguez",
+      "twitter": "https://twitter.com/mariarodriguez",
+      "email": "maria.rodriguez@company.com"
+    }
+  }
+]

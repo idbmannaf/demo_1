@@ -1,0 +1,35 @@
+[
+  {
+    "id": "1",
+    "title": "Digital Innovation Summit 2025",
+    "description": "Join industry leaders and innovators for a comprehensive exploration of emerging digital technologies and their impact on business transformation.",
+    "date": "2025-02-15",
+    "time": "09:00 AM",
+    "location": "Convention Center, New York",
+    "category": "Conference",
+    "image": "https://images.pexels.com/photos/2774556/pexels-photo-2774556.jpeg?auto=compress&cs=tinysrgb&w=800",
+    "featured": true
+  },
+  {
+    "id": "2",
+    "title": "Sustainability Workshop Series",
+    "description": "Interactive workshops focusing on implementing sustainable practices in modern business operations.",
+    "date": "2025-01-20",
+    "time": "02:00 PM",
+    "location": "Online Event",
+    "category": "Workshop",
+    "image": "https://images.pexels.com/photos/1181345/pexels-photo-1181345.jpeg?auto=compress&cs=tinysrgb&w=800",
+    "featured": false
+  },
+  {
+    "id": "3",
+    "title": "Networking Mixer: Tech Professionals",
+    "description": "Connect with like-minded technology professionals in a relaxed networking environment.",
+    "date": "2025-01-25",
+    "time": "06:00 PM",
+    "location": "Tech Hub, San Francisco",
+    "category": "Networking",
+    "image": "https://images.pexels.com/photos/1181406/pexels-photo-1181406.jpeg?auto=compress&cs=tinysrgb&w=800",
+    "featured": true
+  }
+]

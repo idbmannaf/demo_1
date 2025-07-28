@@ -1,0 +1,29 @@
+[
+  {
+    "id": "1",
+    "title": "Annual Innovation Report 2024",
+    "description": "Comprehensive analysis of innovation trends and breakthrough technologies that shaped the industry in 2024.",
+    "publishDate": "2024-12-01",
+    "type": "report",
+    "downloadUrl": "#",
+    "image": "https://images.pexels.com/photos/590022/pexels-photo-590022.jpeg?auto=compress&cs=tinysrgb&w=800"
+  },
+  {
+    "id": "2",
+    "title": "Digital Transformation Best Practices",
+    "description": "A detailed guide outlining proven strategies and methodologies for successful digital transformation initiatives.",
+    "publishDate": "2024-11-15",
+    "type": "publication",
+    "downloadUrl": "#",
+    "image": "https://images.pexels.com/photos/159711/books-bookstore-book-reading-159711.jpeg?auto=compress&cs=tinysrgb&w=800"
+  },
+  {
+    "id": "3",
+    "title": "Future of Work Whitepaper",
+    "description": "Research insights into the evolving nature of work and the technologies enabling new work paradigms.",
+    "publishDate": "2024-10-30",
+    "type": "whitepaper",
+    "downloadUrl": "#",
+    "image": "https://images.pexels.com/photos/301920/pexels-photo-301920.jpeg?auto=compress&cs=tinysrgb&w=800"
+  }
+]
