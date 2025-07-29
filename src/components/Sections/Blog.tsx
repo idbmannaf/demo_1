@@ -17,9 +17,9 @@ const Blog: React.FC = () => {
 
   const categories = [
     { value: 'all', label: 'All Posts' },
-    { value: 'Technology', label: 'Technology' },
-    { value: 'Sustainability', label: 'Sustainability' },
-    { value: 'Workplace', label: 'Workplace' },
+    { value: 'Education', label: 'Education' },
+    { value: 'Healthcare', label: 'Healthcare' },
+    { value: 'Development', label: 'Development' },
   ];
 
   const filteredPosts = blogData.filter(post => {
@@ -75,8 +75,8 @@ const Blog: React.FC = () => {
             variants={itemVariants}
             className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed"
           >
-            Discover the latest trends, insights, and thought leadership from our team of experts
-            across technology, sustainability, and innovation.
+            Discover the latest news, success stories, and insights from our development programs
+            and community initiatives across rural Bangladesh.
           </motion.p>
         </motion.div>
 
@@ -105,8 +105,8 @@ const Blog: React.FC = () => {
                   key={category.value}
                   onClick={() => setSelectedCategory(category.value)}
                   className={`px-4 py-2 rounded-full font-medium transition-all duration-300 ${selectedCategory === category.value
-                      ? 'bg-blue-600 text-white shadow-lg'
-                      : 'bg-white text-gray-700 hover:bg-blue-50 hover:text-blue-600'
+                    ? 'bg-blue-600 text-white shadow-lg'
+                    : 'bg-white text-gray-700 hover:bg-blue-50 hover:text-blue-600'
                     }`}
                 >
                   {category.label}
@@ -195,7 +195,7 @@ const Blog: React.FC = () => {
           animate="visible"
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
         >
-          {filteredPosts.slice(1).map((post, index) => (
+          {filteredPosts.slice(1).map((post) => (
             <motion.article
               key={post.id}
               variants={itemVariants}

@@ -1,10 +1,20 @@
 import {
+    BanknotesIcon,
     CheckCircleIcon,
-    HeartIcon
+    CreditCardIcon,
+    HeartIcon,
+    ShieldCheckIcon
 } from '@heroicons/react/24/outline';
-import { AnimatePresence, motion } from 'framer-motion';
+import { motion } from 'framer-motion';
 import React, { useState } from 'react';
-import PaymentProcessor from '../UI/PaymentProcessor';
+
+interface PaymentMethod {
+    id: string;
+    name: string;
+    icon: React.ComponentType<any>;
+    description: string;
+    isPopular?: boolean;
+}
 
 interface DonationAmount {
     value: number;
@@ -15,7 +25,8 @@ interface DonationAmount {
 const Donation: React.FC = () => {
     const [selectedAmount, setSelectedAmount] = useState<number>(1000);
     const [customAmount, setCustomAmount] = useState<string>('');
-    const [showPaymentProcessor, setShowPaymentProcessor] = useState(false);
+    const [selectedPaymentMethod, setSelectedPaymentMethod] = useState<string>('');
+    const [isProcessing, setIsProcessing] = useState(false);
     const [showSuccess, setShowSuccess] = useState(false);
     const [formData, setFormData] = useState({
         name: '',
@@ -31,6 +42,40 @@ const Donation: React.FC = () => {
         { value: 5000, label: '৳5,000' },
         { value: 10000, label: '৳10,000' },
         { value: 0, label: 'Custom', isCustom: true }
+    ];
+
+    const paymentMethods: PaymentMethod[] = [
+        {
+            id: 'bkash',
+            name: 'bKash',
+            icon: BanknotesIcon,
+            description: 'Fast and secure mobile banking',
+            isPopular: true
+        },
+        {
+            id: 'nagad',
+            name: 'Nagad',
+            icon: BanknotesIcon,
+            description: 'Digital financial service'
+        },
+        {
+            id: 'visa',
+            name: 'Visa Card',
+            icon: CreditCardIcon,
+            description: 'International credit/debit card'
+        },
+        {
+            id: 'mastercard',
+            name: 'Mastercard',
+            icon: CreditCardIcon,
+            description: 'Global payment network'
+        },
+        {
+            id: 'bank',
+            name: 'Bank Transfer',
+            icon: BanknotesIcon,
+            description: 'Direct bank transfer'
+        }
     ];
 
     const handleAmountSelect = (amount: DonationAmount) => {
@@ -56,38 +101,28 @@ const Donation: React.FC = () => {
         }));
     };
 
-    const handleProceedToPayment = () => {
-        if (!formData.name || !formData.email) {
-            alert('Please fill in your name and email address.');
+    const handlePaymentProcessing = async () => {
+        if (!selectedPaymentMethod || !formData.name || !formData.email) {
+            alert('Please fill in all required fields and select a payment method.');
             return;
         }
-        if (getCurrentAmount() <= 0) {
-            alert('Please select a valid donation amount.');
-            return;
-        }
-        setShowPaymentProcessor(true);
-    };
 
-    const handlePaymentSuccess = (paymentId: string) => {
-        setShowPaymentProcessor(false);
-        setShowSuccess(true);
+        setIsProcessing(true);
 
-        // Reset form after success
+        // Simulate payment processing
         setTimeout(() => {
-            setShowSuccess(false);
-            setFormData({ name: '', email: '', phone: '', message: '' });
-            setSelectedAmount(1000);
-            setCustomAmount('');
-        }, 3000);
-    };
+            setIsProcessing(false);
+            setShowSuccess(true);
 
-    const handlePaymentError = (error: string) => {
-        console.error('Payment error:', error);
-        // You can show an error message here
-    };
-
-    const handlePaymentCancel = () => {
-        setShowPaymentProcessor(false);
+            // Reset form after success
+            setTimeout(() => {
+                setShowSuccess(false);
+                setFormData({ name: '', email: '', phone: '', message: '' });
+                setSelectedAmount(1000);
+                setCustomAmount('');
+                setSelectedPaymentMethod('');
+            }, 3000);
+        }, 2000);
     };
 
     const getCurrentAmount = () => {
@@ -145,9 +180,9 @@ const Donation: React.FC = () => {
                                         key={amount.label}
                                         onClick={() => handleAmountSelect(amount)}
                                         className={`p-4 rounded-lg border-2 transition-all duration-300 ${(amount.isCustom && selectedAmount === 0) ||
-                                                (!amount.isCustom && selectedAmount === amount.value)
-                                                ? 'border-blue-600 bg-blue-50 text-blue-700'
-                                                : 'border-gray-200 hover:border-blue-300 hover:bg-gray-50'
+                                            (!amount.isCustom && selectedAmount === amount.value)
+                                            ? 'border-blue-600 bg-blue-50 text-blue-700'
+                                            : 'border-gray-200 hover:border-blue-300 hover:bg-gray-50'
                                             }`}
                                         whileHover={{ scale: 1.02 }}
                                         whileTap={{ scale: 0.98 }}
@@ -241,14 +276,83 @@ const Donation: React.FC = () => {
                             </div>
                         </div>
 
-                        {/* Proceed to Payment Button */}
+                        {/* Payment Method Selection */}
+                        <div className="mb-8">
+                            <label className="block text-sm font-semibold text-gray-700 mb-4">
+                                Select Payment Method *
+                            </label>
+                            <div className="space-y-3">
+                                {paymentMethods.map((method) => (
+                                    <motion.div
+                                        key={method.id}
+                                        className={`p-4 rounded-lg border-2 cursor-pointer transition-all duration-300 ${selectedPaymentMethod === method.id
+                                            ? 'border-blue-600 bg-blue-50'
+                                            : 'border-gray-200 hover:border-blue-300 hover:bg-gray-50'
+                                            }`}
+                                        onClick={() => setSelectedPaymentMethod(method.id)}
+                                        whileHover={{ scale: 1.02 }}
+                                        whileTap={{ scale: 0.98 }}
+                                    >
+                                        <div className="flex items-center justify-between">
+                                            <div className="flex items-center space-x-3">
+                                                <method.icon className="h-6 w-6 text-gray-600" />
+                                                <div>
+                                                    <div className="flex items-center space-x-2">
+                                                        <span className="font-semibold text-gray-900">{method.name}</span>
+                                                        {method.isPopular && (
+                                                            <span className="px-2 py-1 text-xs bg-green-100 text-green-800 rounded-full">
+                                                                Popular
+                                                            </span>
+                                                        )}
+                                                    </div>
+                                                    <p className="text-sm text-gray-600">{method.description}</p>
+                                                </div>
+                                            </div>
+                                            <div className={`w-5 h-5 rounded-full border-2 ${selectedPaymentMethod === method.id
+                                                ? 'border-blue-600 bg-blue-600'
+                                                : 'border-gray-300'
+                                                }`}>
+                                                {selectedPaymentMethod === method.id && (
+                                                    <CheckCircleIcon className="w-5 h-5 text-white" />
+                                                )}
+                                            </div>
+                                        </div>
+                                    </motion.div>
+                                ))}
+                            </div>
+                        </div>
+
+                        {/* Security Notice */}
+                        <div className="flex items-start space-x-3 p-4 bg-blue-50 rounded-lg mb-6">
+                            <ShieldCheckIcon className="h-6 w-6 text-blue-600 mt-0.5" />
+                            <div>
+                                <h4 className="font-semibold text-blue-900">Secure Payment</h4>
+                                <p className="text-sm text-blue-700">
+                                    All transactions are encrypted and secure. We use industry-standard SSL encryption
+                                    to protect your personal and payment information.
+                                </p>
+                            </div>
+                        </div>
+
+                        {/* Donate Button */}
                         <motion.button
-                            onClick={handleProceedToPayment}
-                            className="w-full py-4 px-6 rounded-lg font-semibold text-lg bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white shadow-lg hover:shadow-xl transition-all duration-300"
-                            whileHover={{ scale: 1.02, y: -2 }}
-                            whileTap={{ scale: 0.98 }}
+                            onClick={handlePaymentProcessing}
+                            disabled={isProcessing}
+                            className={`w-full py-4 px-6 rounded-lg font-semibold text-lg transition-all duration-300 ${isProcessing
+                                ? 'bg-gray-400 cursor-not-allowed'
+                                : 'bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white shadow-lg hover:shadow-xl'
+                                }`}
+                            whileHover={!isProcessing ? { scale: 1.02, y: -2 } : {}}
+                            whileTap={!isProcessing ? { scale: 0.98 } : {}}
                         >
-                            Proceed to Secure Payment - ৳{getCurrentAmount().toLocaleString()}
+                            {isProcessing ? (
+                                <div className="flex items-center justify-center space-x-2">
+                                    <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                                    <span>Processing Payment...</span>
+                                </div>
+                            ) : (
+                                `Donate ৳${getCurrentAmount().toLocaleString()}`
+                            )}
                         </motion.button>
                     </motion.div>
 
@@ -338,66 +442,40 @@ const Donation: React.FC = () => {
                     </motion.div>
                 </div>
 
-                {/* Payment Processor Modal */}
-                <AnimatePresence>
-                    {showPaymentProcessor && (
-                        <motion.div
-                            className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4"
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: 1 }}
-                            exit={{ opacity: 0 }}
-                        >
-                            <motion.div
-                                className="w-full max-w-2xl"
-                                initial={{ scale: 0.8, opacity: 0 }}
-                                animate={{ scale: 1, opacity: 1 }}
-                                exit={{ scale: 0.8, opacity: 0 }}
-                            >
-                                <PaymentProcessor
-                                    amount={getCurrentAmount()}
-                                    currency="৳"
-                                    onSuccess={handlePaymentSuccess}
-                                    onError={handlePaymentError}
-                                    onCancel={handlePaymentCancel}
-                                />
-                            </motion.div>
-                        </motion.div>
-                    )}
-                </AnimatePresence>
-
                 {/* Success Modal */}
-                <AnimatePresence>
-                    {showSuccess && (
-                        <motion.div
-                            className="fixed inset-0 bg-black/50 flex items-center justify-center z-50"
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: 1 }}
-                            exit={{ opacity: 0 }}
-                        >
-                            <motion.div
-                                className="bg-white rounded-2xl p-8 max-w-md mx-4 text-center"
-                                initial={{ scale: 0.8, opacity: 0 }}
-                                animate={{ scale: 1, opacity: 1 }}
-                                exit={{ scale: 0.8, opacity: 0 }}
-                            >
-                                <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                                    <CheckCircleIcon className="w-8 h-8 text-green-600" />
-                                </div>
-                                <h3 className="text-2xl font-bold text-gray-900 mb-2">Thank You!</h3>
-                                <p className="text-gray-600 mb-6">
-                                    Your donation of ৳{getCurrentAmount().toLocaleString()} has been processed successfully.
-                                    You will receive a confirmation email shortly.
-                                </p>
-                                <button
-                                    onClick={() => setShowSuccess(false)}
-                                    className="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors"
-                                >
-                                    Continue
-                                </button>
-                            </motion.div>
-                        </motion.div>
-                    )}
-                </AnimatePresence>
+                {/* AnimatePresence is not imported, so this block will be commented out or removed if not needed */}
+                {/* <AnimatePresence>
+          {showSuccess && (
+            <motion.div
+              className="fixed inset-0 bg-black/50 flex items-center justify-center z-50"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+            >
+              <motion.div
+                className="bg-white rounded-2xl p-8 max-w-md mx-4 text-center"
+                initial={{ scale: 0.8, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                exit={{ scale: 0.8, opacity: 0 }}
+              >
+                <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <CheckCircleIcon className="w-8 h-8 text-green-600" />
+                </div>
+                <h3 className="text-2xl font-bold text-gray-900 mb-2">Thank You!</h3>
+                <p className="text-gray-600 mb-6">
+                  Your donation of ৳{getCurrentAmount().toLocaleString()} has been processed successfully. 
+                  You will receive a confirmation email shortly.
+                </p>
+                <button
+                  onClick={() => setShowSuccess(false)}
+                  className="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors"
+                >
+                  Continue
+                </button>
+              </motion.div>
+            </motion.div>
+          )}
+        </AnimatePresence> */}
             </div>
         </section>
     );

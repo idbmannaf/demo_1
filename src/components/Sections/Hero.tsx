@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/outline';
+import { AnimatePresence, motion } from 'framer-motion';
+import React, { useEffect, useState } from 'react';
 import LazyImage from '../UI/LazyImage';
 
 const Hero: React.FC = () => {
@@ -9,27 +9,35 @@ const Hero: React.FC = () => {
   const slides = [
     {
       id: 1,
-      title: 'Innovating the Future of Technology',
-      subtitle: 'Leading digital transformation with cutting-edge solutions',
-      description: 'We help organizations navigate the complex world of digital innovation, creating sustainable solutions that drive growth and success.',
-      image: 'https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=1920',
-      cta: 'Discover Our Solutions',
+      title: 'Empowering Rural Communities',
+      subtitle: 'Building sustainable futures for Bangladesh',
+      description: 'RDRS Bangladesh is committed to the economic and social empowerment of rural communities through innovative development programs and sustainable solutions.',
+      image: 'https://www.rdrsbangladesh.org/storage/photos/1/slider/RDRS_53_Anniversary.jpeg',
+      cta: 'Our Programs',
     },
     {
       id: 2,
-      title: 'Sustainable Business Excellence',
-      subtitle: 'Building tomorrow with responsibility today',
-      description: 'Our commitment to sustainability drives every project, ensuring that progress benefits both business and the environment.',
-      image: 'https://images.pexels.com/photos/414837/pexels-photo-414837.jpeg?auto=compress&cs=tinysrgb&w=1920',
+      title: 'Sustainable Development',
+      subtitle: 'Creating lasting positive change',
+      description: 'We work towards sustainable development goals, focusing on education, healthcare, economic opportunities, and environmental conservation.',
+      image: 'https://www.rdrsbangladesh.org/storage/photos/1/slider/MF.jpg',
       cta: 'Learn More',
     },
     {
       id: 3,
-      title: 'Empowering Global Collaboration',
-      subtitle: 'Connecting teams across boundaries',
-      description: 'We create platforms and solutions that enable seamless collaboration, fostering innovation across global teams and communities.',
-      image: 'https://images.pexels.com/photos/4226122/pexels-photo-4226122.jpeg?auto=compress&cs=tinysrgb&w=1920',
-      cta: 'Join Our Network',
+      title: 'Community-Led Development',
+      subtitle: 'Supporting local initiatives and leadership',
+      description: 'Our approach centers on community participation and local leadership, ensuring that development initiatives are owned and sustained by the communities themselves.',
+      image: 'https://www.rdrsbangladesh.org/storage/photos/1/slider/ED_ELCA.JPG',
+      cta: 'Get Involved',
+    },
+    {
+      id: 4,
+      title: 'Community-Led Development',
+      subtitle: 'Supporting local initiatives and leadership',
+      description: 'Our approach centers on community participation and local leadership, ensuring that development initiatives are owned and sustained by the communities themselves.',
+      image: 'https://www.rdrsbangladesh.org/storage/photos/1/slider/S37A1366.JPG',
+      cta: 'Get Involved',
     },
   ];
 
@@ -86,7 +94,7 @@ const Hero: React.FC = () => {
             >
               {slides[currentSlide].title}
             </motion.h1>
-            
+
             <motion.h2
               className="text-xl md:text-2xl text-blue-200 mb-6 font-light"
               initial={{ opacity: 0, y: 30 }}
@@ -95,7 +103,7 @@ const Hero: React.FC = () => {
             >
               {slides[currentSlide].subtitle}
             </motion.h2>
-            
+
             <motion.p
               className="text-lg md:text-xl text-gray-200 mb-8 max-w-2xl"
               initial={{ opacity: 0, y: 30 }}
@@ -112,14 +120,14 @@ const Hero: React.FC = () => {
               transition={{ duration: 0.8, delay: 1 }}
             >
               <motion.button
-                className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 shadow-lg hover:shadow-xl"
+                className="bg-gradient-to-r from-green-500 to-blue-500 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 shadow-lg hover:shadow-xl"
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => document.querySelector('#what-we-do')?.scrollIntoView({ behavior: 'smooth' })}
               >
                 {slides[currentSlide].cta}
               </motion.button>
-              
+
               <motion.button
                 className="border-2 border-white hover:bg-white hover:text-gray-900 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300"
                 whileHover={{ scale: 1.05, y: -2 }}
@@ -144,21 +152,20 @@ const Hero: React.FC = () => {
         >
           <ChevronLeftIcon className="h-6 w-6 text-white" />
         </motion.button>
-        
+
         <div className="flex items-center space-x-2">
           {slides.map((_, index) => (
             <motion.button
               key={index}
               onClick={() => setCurrentSlide(index)}
-              className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                index === currentSlide ? 'bg-white' : 'bg-white/50'
-              }`}
+              className={`w-3 h-3 rounded-full transition-all duration-300 ${index === currentSlide ? 'bg-white' : 'bg-white/50'
+                }`}
               whileHover={{ scale: 1.2 }}
               aria-label={`Go to slide ${index + 1}`}
             />
           ))}
         </div>
-        
+
         <motion.button
           onClick={nextSlide}
           className="p-3 rounded-full bg-white/20 backdrop-blur-sm hover:bg-white/30 transition-all duration-300"

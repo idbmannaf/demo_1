@@ -70,8 +70,8 @@ const Publications: React.FC = () => {
             variants={itemVariants}
             className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed"
           >
-            Explore our comprehensive collection of research reports, industry publications,
-            and thought leadership content that drives innovation and insight.
+            Explore our comprehensive collection of development reports, research publications,
+            and program evaluations that document our impact and share insights on rural development.
           </motion.p>
         </motion.div>
 
@@ -107,7 +107,7 @@ const Publications: React.FC = () => {
           animate="visible"
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
         >
-          {filteredPublications.map((publication, index) => (
+          {filteredPublications.map((publication) => (
             <motion.article
               key={publication.id}
               variants={itemVariants}

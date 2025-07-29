@@ -1,5 +1,5 @@
-import React from 'react';
 import { motion } from 'framer-motion';
+import React from 'react';
 import { useIntersectionObserver } from '../../hooks/useIntersectionObserver';
 import LazyImage from '../UI/LazyImage';
 
@@ -12,51 +12,51 @@ const WhatWeDo: React.FC = () => {
   const services = [
     {
       id: 1,
-      title: 'Digital Transformation',
-      description: 'Comprehensive digital transformation services to modernize your business processes, enhance customer experiences, and drive operational efficiency.',
-      features: ['Cloud Migration', 'Process Automation', 'Data Analytics', 'AI Integration'],
+      title: 'Education & Literacy',
+      description: 'Comprehensive education programs that improve literacy rates, provide vocational training, and support children\'s education in rural communities.',
+      features: ['Adult Literacy Programs', 'Children\'s Education Support', 'Vocational Training', 'Teacher Development'],
       image: 'https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=600',
-      icon: '🚀',
+      icon: '📚',
     },
     {
       id: 2,
-      title: 'Sustainability Consulting',
-      description: 'Expert guidance on implementing sustainable business practices that reduce environmental impact while improving operational efficiency and brand reputation.',
-      features: ['Environmental Impact Assessment', 'Green Technology Solutions', 'Sustainability Reporting', 'Carbon Footprint Reduction'],
+      title: 'Healthcare & Nutrition',
+      description: 'Community health programs that improve access to healthcare, promote maternal and child health, and address malnutrition in rural areas.',
+      features: ['Maternal & Child Health', 'Nutrition Programs', 'Health Awareness', 'Medical Camps'],
       image: 'https://images.pexels.com/photos/414837/pexels-photo-414837.jpeg?auto=compress&cs=tinysrgb&w=600',
-      icon: '🌱',
+      icon: '🏥',
     },
     {
       id: 3,
-      title: 'Innovation Strategy',
-      description: 'Strategic planning and implementation of innovation initiatives to help organizations stay competitive and adapt to rapidly changing market conditions.',
-      features: ['Innovation Workshops', 'Technology Roadmapping', 'Market Research', 'Competitive Analysis'],
+      title: 'Economic Empowerment',
+      description: 'Programs that create economic opportunities through microfinance, skills training, and support for small-scale entrepreneurs and farmers.',
+      features: ['Microfinance Services', 'Skills Training', 'Market Access', 'Entrepreneurship Support'],
       image: 'https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=600',
-      icon: '💡',
+      icon: '💰',
     },
     {
       id: 4,
-      title: 'Custom Software Development',
-      description: 'Tailored software solutions designed to meet your specific business needs, from web applications to mobile apps and enterprise systems.',
-      features: ['Web Applications', 'Mobile Apps', 'API Development', 'System Integration'],
+      title: 'Agriculture & Food Security',
+      description: 'Sustainable agriculture programs that improve food security, promote climate-smart farming practices, and support farmer livelihoods.',
+      features: ['Sustainable Farming', 'Climate Adaptation', 'Food Security', 'Farmer Training'],
       image: 'https://images.pexels.com/photos/4226122/pexels-photo-4226122.jpeg?auto=compress&cs=tinysrgb&w=600',
-      icon: '💻',
+      icon: '🌾',
     },
     {
       id: 5,
-      title: 'Data & Analytics',
-      description: 'Transform your data into actionable insights with our comprehensive analytics solutions, including business intelligence, predictive analytics, and data visualization.',
-      features: ['Business Intelligence', 'Predictive Analytics', 'Data Visualization', 'Machine Learning'],
+      title: 'Water & Sanitation',
+      description: 'Programs that improve access to clean water, promote sanitation practices, and build community infrastructure for better health outcomes.',
+      features: ['Clean Water Access', 'Sanitation Facilities', 'Hygiene Education', 'Infrastructure Development'],
       image: 'https://images.pexels.com/photos/590020/pexels-photo-590020.jpeg?auto=compress&cs=tinysrgb&w=600',
-      icon: '📊',
+      icon: '💧',
     },
     {
       id: 6,
-      title: 'Cybersecurity Solutions',
-      description: 'Comprehensive cybersecurity services to protect your organization from evolving threats while ensuring compliance with industry standards and regulations.',
-      features: ['Security Audits', 'Threat Detection', 'Compliance Management', 'Security Training'],
+      title: 'Climate Change Adaptation',
+      description: 'Programs that help communities adapt to climate change impacts, build resilience, and implement sustainable environmental practices.',
+      features: ['Climate Resilience', 'Disaster Preparedness', 'Environmental Conservation', 'Community Adaptation'],
       image: 'https://images.pexels.com/photos/60504/security-protection-anti-virus-software-60504.jpeg?auto=compress&cs=tinysrgb&w=600',
-      icon: '🔒',
+      icon: '🌍',
     },
   ];
 
@@ -80,9 +80,9 @@ const WhatWeDo: React.FC = () => {
   };
 
   return (
-    <section 
-      id="what-we-do" 
-      ref={elementRef} 
+    <section
+      id="what-we-do"
+      ref={elementRef}
       className="py-20 bg-white"
       role="region"
       aria-labelledby="what-we-do-heading"
@@ -105,8 +105,9 @@ const WhatWeDo: React.FC = () => {
             variants={itemVariants}
             className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed"
           >
-            We provide comprehensive solutions that drive digital transformation, promote sustainability, 
-            and foster innovation across diverse industries and business sectors.
+            We provide comprehensive development programs that address the key challenges facing rural
+            communities in Bangladesh, focusing on education, healthcare, economic empowerment, and
+            environmental sustainability.
           </motion.p>
         </motion.div>
 
@@ -116,7 +117,7 @@ const WhatWeDo: React.FC = () => {
           animate={isIntersecting ? "visible" : "hidden"}
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
         >
-          {services.map((service, index) => (
+          {services.map((service) => (
             <motion.div
               key={service.id}
               variants={itemVariants}
@@ -184,10 +185,10 @@ const WhatWeDo: React.FC = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             {[
-              { step: '01', title: 'Discovery', description: 'Understanding your business needs and challenges' },
-              { step: '02', title: 'Strategy', description: 'Developing tailored solutions and roadmaps' },
-              { step: '03', title: 'Implementation', description: 'Executing solutions with precision and care' },
-              { step: '04', title: 'Optimization', description: 'Continuous improvement and support' },
+              { step: '01', title: 'Assessment', description: 'Understanding community needs and local context' },
+              { step: '02', title: 'Planning', description: 'Developing community-led development strategies' },
+              { step: '03', title: 'Implementation', description: 'Executing programs with community participation' },
+              { step: '04', title: 'Monitoring', description: 'Continuous evaluation and program improvement' },
             ].map((process, index) => (
               <motion.div
                 key={index}

@@ -1,15 +1,15 @@
-import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { useIntersectionObserver } from '../../hooks/useIntersectionObserver';
-import { 
-  ExclamationTriangleIcon,
-  InformationCircleIcon,
+import {
   BellIcon,
   CalendarIcon,
+  ExclamationTriangleIcon,
+  InformationCircleIcon,
   XMarkIcon
 } from '@heroicons/react/24/outline';
-import noticesData from '../../data/notices.json';
 import { format } from 'date-fns';
+import { AnimatePresence, motion } from 'framer-motion';
+import React, { useState } from 'react';
+import noticesData from '../../data/notices.json';
+import { useIntersectionObserver } from '../../hooks/useIntersectionObserver';
 
 const Notice: React.FC = () => {
   const { elementRef, isIntersecting } = useIntersectionObserver({
@@ -27,8 +27,8 @@ const Notice: React.FC = () => {
     { value: 'Newsletter', label: 'Newsletter' },
   ];
 
-  const filteredNotices = selectedCategory === 'all' 
-    ? noticesData 
+  const filteredNotices = selectedCategory === 'all'
+    ? noticesData
     : noticesData.filter(notice => notice.category === selectedCategory);
 
   const getPriorityIcon = (priority: string) => {
@@ -73,9 +73,9 @@ const Notice: React.FC = () => {
   };
 
   return (
-    <section 
-      id="notice" 
-      ref={elementRef} 
+    <section
+      id="notice"
+      ref={elementRef}
       className="py-20 bg-white"
       role="region"
       aria-labelledby="notice-heading"
@@ -98,8 +98,8 @@ const Notice: React.FC = () => {
             variants={itemVariants}
             className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed"
           >
-            Stay informed with our latest announcements, updates, and important information 
-            that may affect our services and community.
+            Stay informed with our latest announcements, program updates, and important information
+            about our development initiatives and community programs.
           </motion.p>
         </motion.div>
 
@@ -115,11 +115,10 @@ const Notice: React.FC = () => {
               key={category.value}
               variants={itemVariants}
               onClick={() => setSelectedCategory(category.value)}
-              className={`px-6 py-3 rounded-full font-medium transition-all duration-300 ${
-                selectedCategory === category.value
-                  ? 'bg-blue-600 text-white shadow-lg'
-                  : 'bg-gray-100 text-gray-700 hover:bg-blue-50 hover:text-blue-600'
-              }`}
+              className={`px-6 py-3 rounded-full font-medium transition-all duration-300 ${selectedCategory === category.value
+                ? 'bg-blue-600 text-white shadow-lg'
+                : 'bg-gray-100 text-gray-700 hover:bg-blue-50 hover:text-blue-600'
+                }`}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -136,15 +135,14 @@ const Notice: React.FC = () => {
           animate="visible"
           className="space-y-6"
         >
-          {filteredNotices.map((notice, index) => (
+          {filteredNotices.map((notice) => (
             <motion.article
               key={notice.id}
               variants={itemVariants}
-              className={`bg-white rounded-2xl border-l-4 shadow-lg hover:shadow-xl transition-all duration-300 p-6 cursor-pointer ${
-                notice.priority === 'high' ? 'border-red-500' :
+              className={`bg-white rounded-2xl border-l-4 shadow-lg hover:shadow-xl transition-all duration-300 p-6 cursor-pointer ${notice.priority === 'high' ? 'border-red-500' :
                 notice.priority === 'medium' ? 'border-orange-500' :
-                'border-blue-500'
-              }`}
+                  'border-blue-500'
+                }`}
               onClick={() => setSelectedNotice(selectedNotice === notice.id ? null : notice.id)}
               whileHover={{ x: 5 }}
             >
@@ -153,7 +151,7 @@ const Notice: React.FC = () => {
                   <div className={`p-2 rounded-lg ${getPriorityColors(notice.priority)}`}>
                     {getPriorityIcon(notice.priority)}
                   </div>
-                  
+
                   <div className="flex-1">
                     <div className="flex items-center justify-between mb-2">
                       <h3 className="text-xl font-bold text-gray-900 hover:text-blue-600 transition-colors duration-300">
@@ -171,11 +169,11 @@ const Notice: React.FC = () => {
                         </div>
                       </div>
                     </div>
-                    
+
                     <p className="text-gray-600 leading-relaxed">
                       {selectedNotice === notice.id ? notice.content : `${notice.content.substring(0, 150)}...`}
                     </p>
-                    
+
                     <motion.button
                       className="mt-3 text-blue-600 hover:text-blue-800 font-medium text-sm"
                       whileHover={{ x: 5 }}
@@ -196,11 +194,10 @@ const Notice: React.FC = () => {
                     className="mt-4 pt-4 border-t border-gray-200"
                   >
                     <div className="flex items-center justify-between">
-                      <span className={`px-3 py-1 rounded-full text-xs font-medium ${
-                        notice.category === 'General' ? 'bg-gray-100 text-gray-800' :
+                      <span className={`px-3 py-1 rounded-full text-xs font-medium ${notice.category === 'General' ? 'bg-gray-100 text-gray-800' :
                         notice.category === 'Announcement' ? 'bg-green-100 text-green-800' :
-                        'bg-purple-100 text-purple-800'
-                      }`}>
+                          'bg-purple-100 text-purple-800'
+                        }`}>
                         {notice.category}
                       </span>
                       <button
@@ -249,12 +246,12 @@ const Notice: React.FC = () => {
               For urgent matters or emergencies outside of business hours, please contact our emergency hotline.
             </p>
             <motion.a
-              href="tel:+1234567890"
+              href="tel:+88029550123"
               className="inline-flex items-center bg-red-600 text-white px-6 py-3 rounded-lg hover:bg-red-700 transition-colors duration-300 font-medium"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              📞 Emergency Hotline: +1 (234) 567-8900
+              📞 Emergency Hotline: +880-2-955-0123
             </motion.a>
           </motion.div>
         </motion.div>

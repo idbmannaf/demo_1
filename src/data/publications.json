@@ -1,8 +1,8 @@
 [
   {
     "id": "1",
-    "title": "Annual Innovation Report 2024",
-    "description": "Comprehensive analysis of innovation trends and breakthrough technologies that shaped the industry in 2024.",
+    "title": "Annual Development Report 2024",
+    "description": "Comprehensive analysis of our development programs and their impact on rural communities across Bangladesh in 2024.",
     "publishDate": "2024-12-01",
     "type": "report",
     "downloadUrl": "#",
@@ -10,8 +10,8 @@
   },
   {
     "id": "2",
-    "title": "Digital Transformation Best Practices",
-    "description": "A detailed guide outlining proven strategies and methodologies for successful digital transformation initiatives.",
+    "title": "Rural Development Best Practices",
+    "description": "A detailed guide outlining proven strategies and methodologies for successful community-led development initiatives.",
     "publishDate": "2024-11-15",
     "type": "publication",
     "downloadUrl": "#",
@@ -19,8 +19,8 @@
   },
   {
     "id": "3",
-    "title": "Future of Work Whitepaper",
-    "description": "Research insights into the evolving nature of work and the technologies enabling new work paradigms.",
+    "title": "Climate Change Adaptation in Rural Bangladesh",
+    "description": "Research insights into how rural communities are adapting to climate change and building resilience.",
     "publishDate": "2024-10-30",
     "type": "whitepaper",
     "downloadUrl": "#",

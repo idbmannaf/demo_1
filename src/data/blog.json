@@ -1,37 +1,49 @@
 [
   {
     "id": "1",
-    "title": "The Future of Digital Transformation in 2025",
-    "excerpt": "Exploring the latest trends and technologies that will shape digital transformation initiatives in the coming year.",
-    "content": "Digital transformation continues to evolve at an unprecedented pace...",
-    "author": "Sarah Johnson",
+    "title": "Empowering Rural Women Through Education",
+    "excerpt": "How our literacy programs are transforming lives and creating opportunities for women in rural communities across Bangladesh.",
+    "content": "Education is the key to empowerment, especially for women in rural areas...",
+    "author": "Dr. Amina Rahman",
     "publishDate": "2024-12-15",
-    "category": "Technology",
-    "tags": ["Digital Transformation", "Innovation", "Technology Trends"],
+    "category": "Education",
+    "tags": [
+      "Women Empowerment",
+      "Education",
+      "Rural Development"
+    ],
     "image": "https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=800",
     "readTime": 5
   },
   {
     "id": "2",
-    "title": "Sustainable Business Practices: A Comprehensive Guide",
-    "excerpt": "Learn how modern businesses are implementing sustainable practices to create positive environmental and social impact.",
-    "content": "Sustainability has become a cornerstone of modern business strategy...",
-    "author": "Michael Chen",
+    "title": "Improving Maternal Health in Rural Bangladesh",
+    "excerpt": "Our community health programs are making a significant impact on maternal and child health outcomes in rural areas.",
+    "content": "Access to quality healthcare remains a critical challenge in rural Bangladesh...",
+    "author": "Dr. Fatima Begum",
     "publishDate": "2024-12-10",
-    "category": "Sustainability",
-    "tags": ["Sustainability", "Business", "Environment"],
+    "category": "Healthcare",
+    "tags": [
+      "Maternal Health",
+      "Healthcare",
+      "Community Development"
+    ],
     "image": "https://images.pexels.com/photos/414837/pexels-photo-414837.jpeg?auto=compress&cs=tinysrgb&w=800",
     "readTime": 7
   },
   {
     "id": "3",
-    "title": "Innovation in Remote Work Culture",
-    "excerpt": "Discover innovative strategies for building and maintaining a thriving remote work culture in your organization.",
-    "content": "Remote work has fundamentally changed how we approach collaboration...",
-    "author": "Emily Rodriguez",
+    "title": "Climate-Smart Agriculture: Building Resilience",
+    "excerpt": "How our agricultural programs are helping farmers adapt to climate change and improve food security.",
+    "content": "Climate change poses significant challenges to agricultural communities...",
+    "author": "Ahmed Khan",
     "publishDate": "2024-12-05",
-    "category": "Workplace",
-    "tags": ["Remote Work", "Innovation", "Culture"],
+    "category": "Development",
+    "tags": [
+      "Agriculture",
+      "Climate Change",
+      "Food Security"
+    ],
     "image": "https://images.pexels.com/photos/4226122/pexels-photo-4226122.jpeg?auto=compress&cs=tinysrgb&w=800",
     "readTime": 6
   }

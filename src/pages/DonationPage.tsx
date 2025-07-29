@@ -1,5 +1,4 @@
 import {
-    ArrowLeftIcon,
     CheckCircleIcon,
     HeartIcon
 } from '@heroicons/react/24/outline';
@@ -99,9 +98,9 @@ const DonationPage: React.FC = () => {
     };
 
     return (
-        <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50">
+        <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50 mt-4">
             {/* Header */}
-            <motion.header
+            {/* <motion.header
                 className="bg-white/95 backdrop-blur-md shadow-lg"
                 initial={{ y: -100 }}
                 animate={{ y: 0 }}
@@ -129,7 +128,7 @@ const DonationPage: React.FC = () => {
                         </motion.div>
                     </div>
                 </div>
-            </motion.header>
+            </motion.header> */}
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
                 {/* Hero Section */}

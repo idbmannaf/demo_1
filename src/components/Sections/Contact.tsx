@@ -11,7 +11,7 @@ import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import * as yup from 'yup';
 import { useIntersectionObserver } from '../../hooks/useIntersectionObserver';
-import { ContactForm, NewsletterForm } from '../../types';
+import { ContactForm } from '../../types';
 
 const contactSchema = yup.object({
   name: yup.string().required('Name is required').min(2, 'Name must be at least 2 characters'),
@@ -20,9 +20,7 @@ const contactSchema = yup.object({
   message: yup.string().required('Message is required').min(10, 'Message must be at least 10 characters'),
 });
 
-const newsletterSchema = yup.object({
-  email: yup.string().required('Email is required').email('Please enter a valid email'),
-});
+
 
 const Contact: React.FC = () => {
   const { elementRef, isIntersecting } = useIntersectionObserver({
@@ -42,14 +40,7 @@ const Contact: React.FC = () => {
     resolver: yupResolver(contactSchema),
   });
 
-  const {
-    register: registerNewsletter,
-    handleSubmit: handleNewsletterSubmit,
-    formState: { errors: newsletterErrors },
-    reset: resetNewsletter,
-  } = useForm<NewsletterForm>({
-    resolver: yupResolver(newsletterSchema),
-  });
+
 
   const onContactSubmit = async (data: ContactForm) => {
     setIsSubmitting(true);
@@ -59,23 +50,11 @@ const Contact: React.FC = () => {
       console.log('Contact form submitted:', data);
       setSubmitStatus('success');
       resetContact();
-    } catch (error) {
+    } catch {
       setSubmitStatus('error');
     } finally {
       setIsSubmitting(false);
       setTimeout(() => setSubmitStatus('idle'), 5000);
-    }
-  };
-
-  const onNewsletterSubmit = async (data: NewsletterForm) => {
-    try {
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      console.log('Newsletter subscription:', data);
-      resetNewsletter();
-      alert('Successfully subscribed to newsletter!');
-    } catch (error) {
-      alert('Failed to subscribe. Please try again.');
     }
   };
 
@@ -102,28 +81,28 @@ const Contact: React.FC = () => {
     {
       icon: MapPinIcon,
       title: 'Address',
-      details: ['123 Innovation Street', 'Tech City, TC 12345'],
+      details: ['House 43, Road 16', 'Dhaka 1209, Bangladesh'],
       action: 'Get Directions',
       href: 'https://maps.google.com',
     },
     {
       icon: PhoneIcon,
       title: 'Phone',
-      details: ['+1 (234) 567-8900', '+1 (234) 567-8901'],
+      details: ['+880-2-955-0123', '+880-2-955-0124'],
       action: 'Call Now',
-      href: 'tel:+1234567890',
+      href: 'tel:+88029550123',
     },
     {
       icon: EnvelopeIcon,
       title: 'Email',
-      details: ['info@innovatecorp.com', 'support@innovatecorp.com'],
+      details: ['info@rdrsbangladesh.org', 'programs@rdrsbangladesh.org'],
       action: 'Send Email',
-      href: 'mailto:info@innovatecorp.com',
+      href: 'mailto:info@rdrsbangladesh.org',
     },
     {
       icon: ClockIcon,
-      title: 'Business Hours',
-      details: ['Monday - Friday: 9:00 AM - 6:00 PM', 'Saturday: 10:00 AM - 4:00 PM'],
+      title: 'Office Hours',
+      details: ['Monday - Friday: 9:00 AM - 5:00 PM', 'Saturday: 9:00 AM - 1:00 PM'],
       action: 'View Calendar',
       href: '#',
     },
@@ -155,8 +134,8 @@ const Contact: React.FC = () => {
             variants={itemVariants}
             className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed"
           >
-            Ready to transform your business? We'd love to hear from you.
-            Contact us today to discuss your project and discover how we can help.
+            Ready to make a difference in rural communities? We'd love to hear from you.
+            Contact us today to learn more about our programs and discover how you can get involved.
           </motion.p>
         </motion.div>
 

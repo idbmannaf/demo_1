@@ -53,9 +53,9 @@ const WhoWeAre: React.FC = () => {
             variants={itemVariants}
             className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed"
           >
-            We are a team of passionate innovators, technologists, and visionaries dedicated to
-            transforming businesses and communities through cutting-edge digital solutions and
-            sustainable practices.
+            RDRS Bangladesh is a national development organization committed to the economic and social
+            empowerment of the rural poor in Bangladesh. We work with communities to create sustainable
+            development solutions that address the root causes of poverty.
           </motion.p>
         </motion.div>
 
@@ -73,8 +73,8 @@ const WhoWeAre: React.FC = () => {
             <div className="text-4xl mb-4">🎯</div>
             <h3 className="text-2xl font-bold text-gray-900 mb-4">Our Mission</h3>
             <p className="text-gray-600 leading-relaxed">
-              To empower organizations with innovative digital solutions that drive sustainable
-              growth, enhance efficiency, and create positive impact in the communities we serve.
+              To empower rural communities in Bangladesh through sustainable development initiatives,
+              education, healthcare, and economic opportunities that create lasting positive change.
             </p>
           </motion.div>
 
@@ -85,8 +85,9 @@ const WhoWeAre: React.FC = () => {
             <div className="text-4xl mb-4">🔮</div>
             <h3 className="text-2xl font-bold text-gray-900 mb-4">Our Vision</h3>
             <p className="text-gray-600 leading-relaxed">
-              To be the leading catalyst for digital transformation, creating a future where
-              technology serves humanity and drives sustainable progress across all industries.
+              A Bangladesh where all rural communities have access to opportunities for sustainable
+              development, education, healthcare, and economic prosperity, leading to improved
+              quality of life for all.
             </p>
           </motion.div>
 
@@ -97,8 +98,8 @@ const WhoWeAre: React.FC = () => {
             <div className="text-4xl mb-4">⭐</div>
             <h3 className="text-2xl font-bold text-gray-900 mb-4">Our Values</h3>
             <p className="text-gray-600 leading-relaxed">
-              Innovation, integrity, sustainability, and collaboration form the cornerstone of
-              everything we do, ensuring ethical practices and meaningful outcomes.
+              Community participation, sustainability, transparency, and respect for local culture
+              and traditions guide our work, ensuring inclusive and lasting development outcomes.
             </p>
           </motion.div>
         </motion.div>
